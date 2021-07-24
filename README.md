@@ -20,7 +20,7 @@ Result -
 
 This regex is for pattern matching and not for validation. The anticipation is that syslog messages will already have valid IPs in them, as Operating Systems on devices such as routers, switches or end hosts, which produces these syslog messages, will prohibit configuring any invalid IP on any of their interfaces.
 
-Also I used `^` and `$` in example above to show use of anchors, generally they won't be used to search for IPs in syslog as an IP address most likely will not occur at the beginning or at the end of a syslog message.
+Also I used `^` and `$` in example above to show use of anchors, generally they won't be used to search for IPs in syslog as an IP address most likely will not occur at the beginning or at the end of a syslog message. Just one of them can be used with the pattern.
 ## Table of Contents
 
 - [Anchors](#anchors)
@@ -59,9 +59,9 @@ Quantifiers allow you to specify the number of occurrences to match against. Bel
 |Lazy quantifier| a*? |
 |Possesive quantifier| a*+ |
 
-In our regex above we used \d{1,3} or [0-9]{1,3} - which indicates that any octet in IP address are numbers but between 1 and 3 digits long.
+In our regex above we used `\d{1,3}` or `[0-9]{1,3}` - which indicates that any octet in IP address are numbers but between *1 and 3 digits long*.
 ### Grouping Constructs
-Grouping constructs are used to capture substrings of an input string. This is done using preanthesis (). Some of the grouping constructs are -
+Grouping constructs are used to capture substrings of an input string. This is done using preanthesis `()`. Some of the grouping constructs are -
 
 |Regular Expression	|Description|
 |-------------|--------|
@@ -74,7 +74,7 @@ In our example above, we used `(?P<router_wan_ip>...)` which indicates that the 
 ### Bracket Expressions
 Bracket Expressions (an expression enclosed in square brackets, `[]`) are used to match a character out of a set of characters and the hyphen signifies the range of characters to match from.
 
-In example above, [0-9] indicates all decimal digits from the range of 0-9. Likewise, for hex numbers we can use [0-9a-f] which indicates the range of hex digits 0-9,a,b,c,d,e,f.
+In example above, `[0-9]` indicates all decimal digits from the range of *0-9*. Likewise, for hex numbers we can use `[0-9a-f]` which indicates the range of hex digits *0-9,a,b,c,d,e,f*.
 
 Square brackets `[]` allow only characters or character classes (please see below).
 
