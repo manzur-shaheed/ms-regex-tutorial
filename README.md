@@ -20,7 +20,7 @@ Result -
 
 This regex is for pattern matching and not for validation. The anticipation is that syslog messages will already have valid IPs in them, as Operating Systems on devices such as routers, switches or end hosts, which produces these syslog messages, will prohibit configuring any invalid IP on any of their interfaces.
 
-Also I used `^` and `$` in example above to show use of anchors, generally they won't be used to search for IPs in syslog as an IP address most likely will not occur at the beginning or at the end of a syslog message. Just one of them can be used with the pattern.
+Also I used `^` and `$` in example above to show use of anchors, generally they won't be used at the same time to search for IPs in syslog as an IP address most likely will not occur at the beginning or at the end of a syslog message. Just one of them can be used with the pattern.
 ## Table of Contents
 
 - [Anchors](#anchors)
