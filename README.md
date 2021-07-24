@@ -59,7 +59,16 @@ Quantifiers allow you to specify the number of occurrences to match against. Bel
 
 In our regex above we used \d{1,3} or [0-9]{1,3} - which indicates that any octet in IP address are numbers but between 1 and 3 characters long.
 ### Grouping Constructs
+Grouping constructs are used to capture substrings of an input string. This is done using preanthesis (). Some of the grouping constructs are -
 
+|Regular Expression	|Description|
+|-------------|--------|
+|(expr)	|Match or capture group. Captures the information that matches the expression in parentheses.|
+|(?:expr)	|Non-capturing group. Groups the contained expressions together (e.g., to apply a quantifier to multiple symbols at once), but does not restrict the information to be captured to only that group.|
+|(?=expr)	|Captures information that is followed by the expression if the expression is true and the input matches the pattern that follows this expression.|
+|(?<>)	|Named capture group.*|
+
+In our example above, we used `(?P<router_wan_ip>...)` which indicates that the captured IP address will be assigned to a variable named `router_wan_ip` as shown in the example image above.
 ### Bracket Expressions
 
 ### Character Classes
