@@ -95,10 +95,21 @@ A character class is a special notation that matches any symbol from a certain s
 ### The OR Operator
 The OR (`|`) operator is used to match a single regular expression out of several possible regular expressions. This is similar to the logical operator OR, which matches one or more sub-expressions from a set of expressions separated by `|` operator.
 
-For instance, if we need to find programming languages: HTML, PHP, Java,JavaScript or Script, the corresponding regex is: HTML|PHP|Java(Script)?.
+For instance, if we need to find programming languages: HTML, PHP, Java,JavaScript or Script, the corresponding regex is: `HTML|PHP|Java(Script)?`.
 
 ### Flags
+Flags in regular expressions influences searching behaviour of given patterns. Below are some of the regex flags -
 
+|Flag	|Name	|Modification|
+|-----|-----|------------|
+|i	 |Ignore Case	|Makes the expression search case-insensitively.|
+|g	|Global	|Makes the expression search for all occurences.|
+|m	|Multiline	|Makes the boundary characters ^ and $ match the beginning and ending of every single line instead of the beginning and ending of the whole string.|
+|u	|Unicode	|Makes the expression assume individual characters as code points, not code units, and thus match 32-bit characters as well.|
+
+For example, in the previous example in `OR` we gould use `/i` flag to ignore case while matching patterns - `/html|php|Java(script)?/i`.
+
+Very commonly used flags are for multiline log searches are `g`, `i` and `m`, that is `/igm`.
 ### Character Escapes
 
 ## Author
