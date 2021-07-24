@@ -70,11 +70,25 @@ Grouping constructs are used to capture substrings of an input string. This is d
 
 In our example above, we used `(?P<router_wan_ip>...)` which indicates that the captured IP address will be assigned to a variable named `router_wan_ip` as shown in the example image above.
 ### Bracket Expressions
-Bracket Expressions are used to match a charcter out of a set of characters and the hyphen signifies the range of charcters.
+Bracket Expressions (an expression enclosed in square brackets, `[]`) are used to match a character out of a set of characters and the hyphen signifies the range of characters to match from.
 
-In example above, [0-9] indicates all decimal digits from the range of 0-9. Like for hex numbers we can use [a-f0-9] which indicates the range of hex digits 0-9,a,b,c,d,e,f.
+In example above, [0-9] indicates all decimal digits from the range of 0-9. Likewise, for hex numbers we can use [a-f0-9] which indicates the range of hex digits 0-9,a,b,c,d,e,f.
 
 ### Character Classes
+A character class is a special notation that matches any symbol from a certain set. For example, `digit` class is written as `\d` and corresponds to *any single digit*. Common character classes -
+
+|Character Class|Description|
+|---------------|-----------|
+|\d |digits.|
+|\D |non-digits.|
+|\s |space symbols, tabs, newlines.|
+|\S |all but \s.|
+|\w |Latin letters, digits, underscore '_'.|
+|\W |all but \w.|
+|[abc]| a single character of a, b or c.|
+|[^abc]| a character except a, b or c.|
+|[a-zA-Z]| a character in range a-z or A-Z.|
+|[^a-zA-Z]| a character not in range a-z or A-Z.|
 
 ### The OR Operator
 
