@@ -1,10 +1,19 @@
 # Regex for IP addresses
 
-Introductory paragraph (replace this with your text)
-/(?P<router_wan_ip>^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$)/
+The following regular expression is for detecting IP addresses in a text file (generally in router logs forwared to a syslog server).
+
+/(?P<router_wan_ip>^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$)/gm
+
+a sample log -
+```
+2021-05-20 05:16:42 syslog-server ping alert normal core-net alex1 transit-net: [alex2] [intf-xe-5/1/0.0] cross-over LAN interface 192.56.208.2 down
+```
+
+Result -
+![example](./assets/images/example.png)
+
 ## Summary
-portmap-ping alert normal core (?P<l_router_name>\S+).+: \[(?P<l_router_intf>[^\]]+)\](?: \[port-(?P<l_intf_name>[^\]]+)\])? \S+ interface (?P<l_router_wan_ip>\d+\.\d+\.\d+\.\d+) up
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+
 
 ## Table of Contents
 
