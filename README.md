@@ -1,8 +1,12 @@
 # Regex for IP addresses
+This readme file explains how to use regular expressions to detect an IP address in a log file.
 
+## Summary
 The following regular expression is for detecting IP addresses in a text file (generally in router logs forwared to a syslog server).
 
+```
 /(?P<router_wan_ip>^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$)/gm
+```
 
 a sample log -
 ```
@@ -11,9 +15,6 @@ a sample log -
 
 Result -
 ![example](./assets/images/example.png)
-
-## Summary
-
 
 ## Table of Contents
 
@@ -29,6 +30,14 @@ Result -
 ## Regex Components
 
 ### Anchors
+Generally regex is used to match a pattern. Anchors are different in the sense that they do not match any character, rather they match a position like before, after or between characters. Here are some of the commonly used anchors -
+
+|Description | Symbol |
+|-------------|--------|
+|Start of string| ^|
+|End of String| $ |
+|Word Boundary| \b |
+
 
 ### Quantifiers
 
