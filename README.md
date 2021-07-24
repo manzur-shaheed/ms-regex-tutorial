@@ -74,6 +74,8 @@ Bracket Expressions (an expression enclosed in square brackets, `[]`) are used t
 
 In example above, [0-9] indicates all decimal digits from the range of 0-9. Likewise, for hex numbers we can use [a-f0-9] which indicates the range of hex digits 0-9,a,b,c,d,e,f.
 
+Square brackets allow only characters or character classes.
+
 ### Character Classes
 A character class is a special notation that matches any symbol from a certain set. For example, `digit` class is written as `\d` and corresponds to *any single digit*. Common character classes -
 
@@ -91,6 +93,9 @@ A character class is a special notation that matches any symbol from a certain s
 |[^a-zA-Z]| a character not in range a-z or A-Z.|
 
 ### The OR Operator
+The OR (`|`) operator is used to match a single regular expression out of several possible regular expressions. This is similar to the logical operator OR, which matches one or more sub-expressions from a set of expressions separated by `|` operator.
+
+For instance, if we need to find programming languages: HTML, PHP, Java,JavaScript or Script, the corresponding regex is: HTML|PHP|Java(Script)?.
 
 ### Flags
 
