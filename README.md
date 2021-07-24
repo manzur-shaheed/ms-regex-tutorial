@@ -16,6 +16,9 @@ a sample log -
 Result -
 ![example](./assets/images/example.png)
 
+**Disclaimer** - in the above regex, \d{1,3} or [0-9]{1,3} will match any numbers between 0 and 999. So, the above regex will also match 987.654.321.0 as an IP address which is incorrect as each octet in IP addresses can only be within 0 - 255 range. 
+
+The idea is that this regex is for pattern matching and not for validation. The anticipation is that syslog messages will already have valid IPs in them, as Operating Systems on devices such as routers, switches or end hosts, which produces these syslog messages, will prohibit configuring any invalid IP on any of their interfaces.
 ## Table of Contents
 
 - [Anchors](#anchors)
@@ -40,7 +43,21 @@ Generally regex is used to match a pattern. Anchors are different in the sense t
 
 
 ### Quantifiers
+Quantifiers allow you to specify the number of occurrences to match against. Below is a list of quantifiers -
 
+|Description | Symbol |
+|-------------|--------|
+|Zero or one of a| a?|
+|Zero or more of a| a* |
+|One or more of a| a+ |
+|Exactly `n` of a| a{n} |
+|`n` or more of a| a{n,} |
+|Between `m` and `n` of a| a{m,n} |
+|Greedy quantifier| a* |
+|Lazy quantifier| a*? |
+|Possesive quantifier| a*+ |
+
+In our regex above we used \d{1,3} or [0-9]{1,3} - which indicates that any octet in IP address are numbers but between 1 and 3 characters long.
 ### Grouping Constructs
 
 ### Bracket Expressions
